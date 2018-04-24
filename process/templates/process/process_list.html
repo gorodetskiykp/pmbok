@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Процессы{% endblock %}
+{% block content %}
+<h1>Процессы</h1>
+<table id="table" class="table table-bordered table-hover table-sm">
+<thead>
+<tr>
+<th scope="row">Процесс</th>
+<th scope="row">Группа процессов</th>
+<th scope="row">Область знаний</th>
+</tr>
+</thead>
+<tbody>
+{% for process in object_list %}
+<tr>
+    <td><a href="#">{{process.name}}</a></td>
+    <td><a href="#">{{process.process_group.order}}. {{process.process_group.name}}</a></td>
+    <td><a href="#">{{process.knowlege_field.order}}. {{process.knowlege_field.name}}</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

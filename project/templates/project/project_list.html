@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Проекты{% endblock %}
+{% block content %}
+<h1>Проекты</h1>
+<ul class="list-group">
+{% for project in projects_list %}
+    <li class="list-group-item"><a href="{% url 'project-details' project.id %}">{{project.short_name}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
